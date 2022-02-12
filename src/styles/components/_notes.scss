@@ -1,0 +1,73 @@
+
+.notes__main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+} 
+
+.notes__appbar{
+    align-items: center;
+    background-color: $primary;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+}
+
+.notes__content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.notes__title-input, .notes__textarea {
+    border: none;
+    background-color: $primary;
+    &::placeholder{
+        color: $light-gray;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+.notes__title-input{
+    color: $white;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    &::placeholder{
+        color: $light-gray;
+        opacity: 70%;
+    }
+}
+
+.notes__textarea {
+    border: none;
+    color: $white;
+    font-size: 16px;
+    flex: 1 1 auto;
+    resize: none;
+    font-style: italic;
+    margin-bottom: 5rem;
+
+    &::placeholder{
+        color: $light-gray;
+        opacity: 70%;
+    }
+}
+
+.notes__image img {
+    height: 150px;
+    border-radius: 10px;
+
+    &:hover{
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.25);
+        transition: box-shadow .3s ease;
+        filter: saturate(80%);
+        filter: blur(.5px);
+    }
+}

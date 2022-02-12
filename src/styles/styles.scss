@@ -1,0 +1,14 @@
+@import './base/settings';
+@import './base/base';
+@import './components/auth';
+@import './components/buttons';
+@import './components/links';
+@import './components/journal';
+@import './components/nothing';
+@import './components/notes';
+
+h1 {
+    color: $white;
+    font-weight: 700;
+    font-style: italic;
+}
