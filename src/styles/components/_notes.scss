@@ -41,7 +41,6 @@
 
     &::placeholder{
         color: $light-gray;
-        opacity: 70%;
     }
 }
 
@@ -60,14 +59,13 @@
     }
 }
 
-.notes__image img {
+img {
     height: 150px;
     border-radius: 10px;
 
     &:hover{
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.25);
         transition: box-shadow .3s ease;
-        filter: saturate(80%);
-        filter: blur(.5px);
+        filter: saturate(80%); 
     }
 }

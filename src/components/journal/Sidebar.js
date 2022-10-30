@@ -22,10 +22,10 @@ export const Sidebar = () => {
   return(
     <aside className='journal__sidebar mt-5'>
         <div className='journal__sidebar-navbar'>
-            <h3 className='mt-5'>
-                <i className='far fa-moon'></i>
-                <span>{ name }</span>
-            </h3>
+            <p className='mt-5'>
+                <i className='fa-solid fa-skull-crossbones fa-beat'></i>
+                <span className='name'>{ name }</span>
+            </p>
             <button 
                 className='btn'
                 onClick={ handleLogout }

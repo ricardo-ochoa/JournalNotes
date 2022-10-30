@@ -5,8 +5,9 @@
     color: $white;
     cursor: pointer;
     font-size: 14px;
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 10px;
+    margin-left: .5rem;
 
     &:focus{
         outline: none;
@@ -15,7 +16,10 @@
 
     &:hover{
         background-color: darken($color: $orange, $amount: 5);
-        
+    }
+
+    &:active{
+        transform: scale(.95);
     }
 
     &:disabled{
@@ -41,6 +45,10 @@
     cursor: pointer;
     margin: 10px 0px 10px 0px;
 
+    &:active{
+        transform: scale(.95);
+    }
+
     &:hover{
         background-color: darken($color: $orange, $amount: 5);
     }
@@ -56,6 +64,19 @@
     }
 
 }
+
+.btn-danger{
+    background-color: red;
+
+    &:hover{
+        background-color: rgb(218, 14, 14);
+    }
+
+    &:focus{
+        outline: none;
+        background-color: darken($color: red, $amount: 5);
+    }
+} 
 
 
 .google-btn {

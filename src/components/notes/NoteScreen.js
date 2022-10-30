@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { activeNote } from '../../action/notes';
+import { activeNote, startDeleting } from '../../action/notes';
 import { useForm } from '../../hooks/useForm';
 import { NoteAppBar } from './NoteAppBar';
 
@@ -15,7 +15,7 @@ export const NoteScreen = () => {
     const { active:note } =  useSelector( state => state.notes)
 
     const [ formValues, handleInputChange, reset ] = useForm( note );
-    const { body, title } = formValues;
+    const { body, title, id } = formValues;
 
     // cambair las notas al darle click
     const activeId = useRef( note.id )
@@ -33,6 +33,14 @@ export const NoteScreen = () => {
     useEffect(() => {
         dispatch(activeNote ( formValues.id, {...formValues} ))
     }, [formValues, dispatch]);
+
+    const handlePictureClick = () => {
+        document.querySelector('#fileSelector').click();
+      }
+
+    const handleDelete = () => {
+        dispatch( startDeleting( id ));
+    }
     
 
   return(
@@ -63,12 +71,12 @@ export const NoteScreen = () => {
                     <img
                         src={ note.url }
                         alt='Imagen'
+                        onClick={ handlePictureClick }
                     />
                 </div>)
             }
-
-            
         </div>
+
       </div>
   ) 
 }

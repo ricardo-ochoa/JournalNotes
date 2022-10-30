@@ -11,10 +11,10 @@ import { startRegisterWithEmailPasswordName } from '../../action/auth';
 export const RegisterScreen = () => {
 
   const [ formValues, handleImputChange ] = useForm({
-    name: 'Mokey D. Luffy',
-    email: 'luffy@gmail.com',
-    password: '123456',
-    password2: '123456'
+    name: '',
+    email: '',
+    password: '',
+    password2: ''
   })
 
   const dispatch = useDispatch();
@@ -51,7 +51,7 @@ export const RegisterScreen = () => {
   }
   
   return (
-      <div>
+      <div className='animate__animated animate__pulse'>
             <p className='auth__title'>Create your Free Account</p>
             <form onSubmit={ handleRegister }>
 

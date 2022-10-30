@@ -12,8 +12,8 @@ export const LoginScreen = () => {
   const { loading } = useSelector( state => state.ui);
 
   const [ formValues, handleImputChange ] = useForm({
-    email: 'luffy@gmail.com',
-    password: 'onepiece'
+    email: '',
+    password: ''
   })
 
   const { email, password } = formValues;
@@ -28,10 +28,8 @@ export const LoginScreen = () => {
     dispatch( startGoogleLogin() );
   }
 
-  
-
   return(
-    <div>
+    <div >
         <p className='auth__title'>Login to your account</p>
         <form onSubmit= { handleLogin }>
           <input
@@ -46,7 +44,7 @@ export const LoginScreen = () => {
           <input
             type="password"
             placeholder='Password'
-            name="pasword"
+            name="password"
             className='auth__input password'
             value={ password }
             onChange={ handleImputChange }
@@ -67,7 +65,7 @@ export const LoginScreen = () => {
         </div>
 
         <div className='auth__terceros' >
-          <div 
+          {/* <div 
               className="google-btn">
               <div className="google-icon-wrapper">
               <svg className="metamask-icon" alt="Metamask button" width="33" height="30" viewBox="0 0 33 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,7 +103,7 @@ export const LoginScreen = () => {
               <p className="btn-text-metamask">
                   <b>Continue with METAMASK</b>
               </p>
-          </div>
+          </div> */}
 
           <div 
               className="google-btn"

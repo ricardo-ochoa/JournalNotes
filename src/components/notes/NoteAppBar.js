@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { startSaveNote, startUploading } from '../../action/notes';
+import { startDeleting, startSaveNote, startUploading } from '../../action/notes';
+import { useForm } from '../../hooks/useForm';
 
 export const NoteAppBar = () => {
 
@@ -23,6 +24,12 @@ export const NoteAppBar = () => {
     }
   }
 
+  const [ formValues ] = useForm( active );
+  const { id } = formValues;
+
+  const handleDelete = () => {
+    dispatch( startDeleting( id ));
+}
 
   return(
     <div className='notes__appbar'>
@@ -46,6 +53,12 @@ export const NoteAppBar = () => {
               onClick={ handleSave }
             >
                 Save
+            </button>
+            <button
+            className=' btn btn-danger'
+            onClick={ handleDelete }
+            >
+            <i class="fa-solid fa-trash"></i>
             </button>
         </div>
     </div>

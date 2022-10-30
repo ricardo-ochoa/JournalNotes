@@ -12,10 +12,11 @@ export const JournalEntry = ({id, title, date, body, url}) => {
         dispatch( activeNote( id, {title, date, body, url}) )
     }
 
+
   return(
-    <div className='journal__entry' 
-        onClick={handleEntryClick}
-    >
+    <div className='journal__entry animate__animated animate__backInDown ' 
+        onClick={handleEntryClick}>
+
 
         {
             url &&
@@ -32,13 +33,16 @@ export const JournalEntry = ({id, title, date, body, url}) => {
 
         <div className='journal__entry-body'>
             <p className='journal__entry-title' >{ title }</p>
-            <p className='journal__entry-content'>{ body } </p>
+            {/* <p className='journal__entry-content'>{ body } </p> */}
         </div>
+
 
         <div className='journal__entry-date-box'>
             <span>{ noteDate.format('dddd') }</span>
             <h4>{ noteDate.format('Do') }</h4>
         </div>
+
+
     </div>
     
   )
