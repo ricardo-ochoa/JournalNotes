@@ -31,7 +31,7 @@ export const LoginScreen = () => {
   return(
     <div >
         <p className='auth__title'>Login to your account</p>
-        <form onSubmit= { handleLogin }>
+        <form onSubmit= { handleLogin }>
           <input
             type="text"
             placeholder='email'
